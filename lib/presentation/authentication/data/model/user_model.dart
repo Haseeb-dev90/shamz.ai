@@ -1,31 +1,32 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class UserModel {
   final String? uid;
   final String? name;
   final String email;
   final String? password;
-  final Timestamp createdAt;
-  final Timestamp updatedAt;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   UserModel({
     this.uid,
     this.name,
     required this.email,
     this.password,
-    Timestamp? createdAt,
-    Timestamp? updatedAt,
-  }) : createdAt = createdAt ?? Timestamp.now(),
-        updatedAt = updatedAt ?? Timestamp.now();
+    DateTime? createdAt,
+    DateTime? updatedAt,
+  })  : createdAt = createdAt ?? DateTime.now(),
+        updatedAt = updatedAt ?? DateTime.now();
 
   factory UserModel.fromFirestore(Map<String, dynamic> data) {
-
     return UserModel(
       uid: data['uid'],
       name: data['name'],
       email: data['email'] ?? '',
-      createdAt: data['createdAt'] == null ? Timestamp.now() : Timestamp.fromMicrosecondsSinceEpoch(data['createdAt']),
-      updatedAt: data['updatedAt'] == null ? Timestamp.now() : Timestamp.fromMicrosecondsSinceEpoch(data['updatedAt']),
+      createdAt: data['createdAt'] != null
+          ? DateTime.parse(data['createdAt'])
+          : DateTime.now(),
+      updatedAt: data['updatedAt'] != null
+          ? DateTime.parse(data['updatedAt'])
+          : DateTime.now(),
     );
   }
 
@@ -34,8 +35,8 @@ class UserModel {
       'uid': uid,
       'name': name,
       'email': email,
-      'createdAt': createdAt.microsecondsSinceEpoch,
-      'updatedAt': updatedAt.microsecondsSinceEpoch,
+      'createdAt': createdAt.toIso8601String(),
+      'updatedAt': updatedAt.toIso8601String(),
     };
   }
 
@@ -44,7 +45,8 @@ class UserModel {
     String? name,
     String? email,
     String? password,
-    Timestamp? createdAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
   }) {
     return UserModel(
       uid: uid ?? this.uid,
@@ -52,7 +54,7 @@ class UserModel {
       email: email ?? this.email,
       password: password ?? this.password,
       createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
     );
   }
-
 }

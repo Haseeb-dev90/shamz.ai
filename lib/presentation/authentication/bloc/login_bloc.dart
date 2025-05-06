@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shamz_ai/app_exports.dart';
 
 part 'login_event.dart';
@@ -23,10 +22,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginSuccessEvent event, Emitter<LoginState> emit) async {
     try {
       emit(LoginInProgress());
-      DocumentSnapshot userDoc = await DatabaseService().getCurrentUserData();
-      emit(LoginSuccess(
-          user: UserModel.fromFirestore(
-              userDoc.data() as Map<String, dynamic>)));
+   // Handle login logic
+   //    emit(LoginSuccess(
+   //        user: UserModel.fromFirestore(
+   //            userDoc.data() as Map<String, dynamic>)));
     } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
@@ -36,18 +35,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       VerifyEmailButtonPressed event, Emitter<LoginState> emit) async {
     try {
       emit(LoginInProgress());
-      await FirebaseAuth.instance.currentUser?.reload();
-      final isEmailVerified =
-          FirebaseAuth.instance.currentUser?.emailVerified ?? false;
-      DocumentSnapshot userDoc = await DatabaseService().getCurrentUserData();
-      if (isEmailVerified) {
-        emit(LoginSuccess(
-            user: UserModel.fromFirestore(
-                userDoc.data() as Map<String, dynamic>)));
-      } else {
-        emit(const LoginVerification(
-            error: 'Please verify your email before proceeding.'));
-      }
+     // Handle verify email logic
     } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
@@ -57,23 +45,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       AuthStarted event, Emitter<LoginState> emit) async {
     emit(LoginInitial());
     try {
-      var currentUser = FirebaseAuth.instance.currentUser;
-      if (currentUser != null) {
-        if (!currentUser.emailVerified) {
-          emit(const LoginVerification(error: 'Please verify your email before proceeding.'));
-        } else {
-          DocumentSnapshot userDoc =
-              await DatabaseService().getCurrentUserData();
-          emit(LoginSuccess(
-              user: UserModel.fromFirestore(
-                  userDoc.data() as Map<String, dynamic>)));
-        }
-      } else {
-        await Future.delayed(
-          const Duration(seconds: 2),
-        );
-        emit(const LoginFailure());
-      }
+    // Handle auth started logic
     } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
@@ -81,28 +53,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _handleLogin(
       LoginButtonPressed event, Emitter<LoginState> emit) async {
-    emit(LoginInProgress());
 
     try {
-      UserCredential? authUser = await authenticationProvider
-          .signIn(UserModel(email: event.username, password: event.password));
-      if (authUser?.user != null) {
-        if (!authUser!.user!.emailVerified) {
-          authenticationProvider.verifyEmail();
-          emit(const LoginVerification());
-        } else {
-          DocumentSnapshot userDoc =
-              await DatabaseService().getCurrentUserData();
-          emit(LoginSuccess(
-              user: UserModel.fromFirestore(
-                  userDoc.data() as Map<String, dynamic>)));
-        }
-      } else {
-        emit(const LoginFailure(error: 'Invalid credentials'));
-      }
-    } on FirebaseAuthException catch (error) {
-      emit(LoginFailure(error: error.message.toString()));
-    }on Exception catch (error) {
+      emit(LoginInProgress());
+     // Handle login logic
+    }  catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
   }
@@ -111,15 +66,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       SignUpButtonPressed event, Emitter<LoginState> emit) async {
     try {
       emit(LoginInProgress());
-      final authUser =
-          await authenticationProvider.signUp(event.user);
-      if (authUser?.user != null) {
-        authenticationProvider.verifyEmail();
-        emit(const LoginVerification());
-      }
-    } on FirebaseAuthException catch (error) {
-      emit(LoginFailure(error: error.message.toString()));
-    } catch (error) {
+      // Handle sign up logic
+    }  catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
   }

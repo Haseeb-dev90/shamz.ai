@@ -31,7 +31,6 @@ export 'package:shamz_ai/utils/components/custom_icon_button.dart';
 export 'package:shamz_ai/utils/extensions/alert_extension.dart';
 export 'package:shamz_ai/presentation/authentication/bloc/login_bloc.dart';
 export 'package:shamz_ai/presentation/authentication/data/model/user_model.dart';
-export 'package:cloud_firestore/cloud_firestore.dart';
 export 'dart:io';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:shamz_ai/presentation/authentication/data/auth_service.dart';
@@ -39,7 +38,6 @@ export 'package:shamz_ai/blocs_observer.dart';
 export 'package:delightful_toast/delight_toast.dart';
 export 'package:delightful_toast/toast/utils/enums.dart';
 export 'package:loading_animation_widget/loading_animation_widget.dart';
-export 'package:firebase_core/firebase_core.dart';
 export 'package:flutter/services.dart';
 export 'package:shamz_ai/presentation/home/data/home_provider.dart';
 
