@@ -19,7 +19,7 @@ class CustomActionButton extends StatelessWidget {
     required this.onTap,
     this.width,
     this.isEnabled = true,
-    this.backgroundColor = kPrimaryColor,
+    this.backgroundColor = kBlackColor,
     this.buttonTextColor = kWhiteColor,
     this.buttonTextStyle,
     this.borderColor,
@@ -47,7 +47,8 @@ class CustomActionButton extends StatelessWidget {
         child: Center(
           child: Text(
             buttonText,
-            style: buttonTextStyle ?? AppTypography.buttonText,
+            style: buttonTextStyle ??
+                AppTypography.buttonText.copyWith(color: kWhiteColor),
           ),
         ),
       ),

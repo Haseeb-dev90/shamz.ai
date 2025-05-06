@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:shamz_ai/app_exports.dart';
 
 class AppTypography {
-
-
- static const String fontFamily = 'unbounded';
-
+  static const String fontFamily = 'unbounded';
 
   /// Font Sizes
   static const double microTextSize = 8.0;
@@ -64,8 +62,10 @@ class AppTypography {
       getTextStyle(fontSize: h3Size, fontWeight: semiBold);
   static TextStyle get subtitle =>
       getTextStyle(fontSize: subheadingSize, fontWeight: regular);
-  static TextStyle get buttonText =>
-      getTextStyle(fontSize: buttonTextSize, fontWeight: regular);
+  static TextStyle get buttonText => getTextStyle(
+        fontSize: buttonTextSize,
+        fontWeight: regular,
+      );
   static TextStyle get overline =>
       getTextStyle(fontSize: captionSize, fontWeight: light);
 
@@ -74,7 +74,6 @@ class AppTypography {
       Color fontColor = Colors.black,
       FontWeight fontWeight = AppTypography.regular,
       double fontHeight = 1.5,
-
       TextOverflow overflow = TextOverflow.ellipsis}) {
     try {
       return TextStyle(
