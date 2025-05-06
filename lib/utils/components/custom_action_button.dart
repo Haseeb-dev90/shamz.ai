@@ -24,7 +24,8 @@ class CustomActionButton extends StatelessWidget {
     this.buttonTextStyle,
     this.borderColor,
     this.margin = EdgeInsets.zero,
-    this.height = 52, this.borderRadius = 8,
+    this.height = 52,
+    this.borderRadius = 8,
   });
 
   @override
@@ -38,19 +39,15 @@ class CustomActionButton extends StatelessWidget {
         // padding: EdgeInsets.symmetric(vertical: getProportionateScreenHeight(15)),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
-          color:
-          isEnabled ? backgroundColor : backgroundColor?.withValues(alpha: 0.5),
+          color: isEnabled
+              ? backgroundColor
+              : backgroundColor?.withValues(alpha: 0.5),
           border: borderColor != null ? Border.all(color: borderColor!) : null,
         ),
         child: Center(
           child: Text(
             buttonText,
-            style: buttonTextStyle ??
-                AppStyles.w500f15inter.copyWith(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: buttonTextColor,
-                ),
+            style: buttonTextStyle ?? AppTypography.buttonText,
           ),
         ),
       ),

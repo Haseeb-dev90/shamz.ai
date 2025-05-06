@@ -8,7 +8,7 @@ class ValidateForm {
         r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
         r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
     final regex = RegExp(pattern);
-    if (value == null ||value.isEmpty || value.trim().isEmpty) {
+    if (value == null || value.isEmpty || value.trim().isEmpty) {
       return 'Please enter your email';
     }
     return value!.isNotEmpty && !regex.hasMatch(value)
@@ -27,7 +27,7 @@ class ValidateForm {
     if (value == null || value.isEmpty) {
       return 'Password cannot be empty';
     }
-    if (value.length < 8 ) {
+    if (value.length < 8) {
       return 'Password must be at least 8 characters';
     }
     if (!RegExp(r'(?=.*[a-z])').hasMatch(value)) {
@@ -64,6 +64,7 @@ class ValidateForm {
     }
     return null;
   }
+
   static String? validateNumericField(String? value) {
     if (value == null || value.isEmpty) {
       return "cannot be empty";
@@ -73,12 +74,14 @@ class ValidateForm {
     }
     return null;
   }
+
   static String? validateBreedName(String? value) {
     if (value == null || value.isEmpty) {
       return 'Please enter breed name';
     }
     return null;
   }
+
   static String? validateLoginPassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'password cannot be empty';

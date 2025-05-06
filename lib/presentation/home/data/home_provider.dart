@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class HomeProvider extends ChangeNotifier {
   Future<void> test(BuildContext context) async {
     try {
@@ -11,5 +10,4 @@ class HomeProvider extends ChangeNotifier {
       );
     }
   }
-
 }

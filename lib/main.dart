@@ -1,15 +1,13 @@
 import '/app_exports.dart';
 import 'di/locator.dart';
 
-
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   initServices();
   Bloc.observer = SimpleBlocObserver();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: kScaffoldBlackColor,
+      statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
     ),
   );

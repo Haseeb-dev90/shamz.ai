@@ -17,12 +17,14 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     _confirmPasswordController = TextEditingController();
     super.initState();
   }
+
   @override
   void dispose() {
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +40,20 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 SizedBox(
                   height: getProportionateScreenHeight(60),
                 ),
-                SvgPicture.asset(
-                  Assets.svgAssetsFeederIcon,
-                  height: getProportionateScreenHeight(100),
-                  width: getProportionateScreenWidth(100),
-                ),
+                //todo icons need to be updated
+                // SvgPicture.asset(
+                //   Assets.svgAssetsFeederIcon,
+                //   height: getProportionateScreenHeight(100),
+                //   width: getProportionateScreenWidth(100),
+                // ),
                 SizedBox(
                   height: getProportionateScreenHeight(30),
                 ),
                 Text(
                   "Reset Password",
-                  style: AppStyles.w600f24inter.copyWith(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
+                  style: TextStyle(
+                    fontSize: AppTypography.h1Size,
+                    fontWeight: AppTypography.medium,
                   ),
                 ),
                 SizedBox(
@@ -59,9 +62,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 Text(
                   "Create a new strong password to reset your\naccount access.",
                   textAlign: TextAlign.center,
-                  style: AppStyles.w400f16inter.copyWith(
-                    fontSize: 14,
-                    color: kGray61Color,
+                  style: TextStyle(
+                    fontSize: AppTypography.secondaryTextSize,
                   ),
                 ),
                 SizedBox(
@@ -69,14 +71,16 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                 ),
                 CustomTextField(
                   hintText: "Enter New password",
-                  obscureText: true, controller: _passwordController,
+                  obscureText: true,
+                  controller: _passwordController,
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(16),
                 ),
                 CustomTextField(
                   hintText: "Confirm your password",
-                  obscureText: true, controller: _confirmPasswordController,
+                  obscureText: true,
+                  controller: _confirmPasswordController,
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(40),

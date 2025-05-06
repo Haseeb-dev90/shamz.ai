@@ -16,7 +16,7 @@ class AppGenerateRoute {
       case RouteName.homeScreen:
         return _navigateScreen(const HomeScreen());
       default:
-        return _navigateScreen(const SplashScreen());
+        return _navigateScreen(const WelcomeScreen());
     }
   }
 
@@ -30,8 +30,10 @@ class AppGenerateRoute {
     );
   }
 
-  static Widget customLeftSlideTransition(Animation<double> animation, Widget child) {
-    Tween<Offset> tween = Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0));
+  static Widget customLeftSlideTransition(
+      Animation<double> animation, Widget child) {
+    Tween<Offset> tween =
+        Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0));
     return SlideTransition(
       position: tween.animate(animation),
       child: child,
@@ -48,6 +50,4 @@ class RouteName {
   static const resetPassword = "/resetPassword";
   static const addNewCard = "/addNewCard";
   static const homeScreen = "/homeScreen";
-  static const dotRegulationScreen = "/dotRegulationScreen";
-
 }

@@ -1,5 +1,3 @@
-
-
 import 'app_exports.dart';
 
 class AppTheme {
@@ -12,6 +10,7 @@ class AppTheme {
         primarySwatch: MaterialColor(0xFF01386C, color),
       ),
       scaffoldBackgroundColor: kWhiteColor,
+      fontFamily: 'Unbounded',
       appBarTheme: const AppBarTheme(
         backgroundColor: kWhiteColor,
         surfaceTintColor: kWhiteColor,

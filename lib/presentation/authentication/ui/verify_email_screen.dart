@@ -1,7 +1,6 @@
 import 'dart:developer';
 import '/app_exports.dart';
 
-
 class VerifyEmailScreen extends StatefulWidget {
   const VerifyEmailScreen({super.key});
 
@@ -53,21 +52,18 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 SizedBox(
                   height: getProportionateScreenHeight(60),
                 ),
-                Image.asset(
-                  Assets.pngAssetsSplash,
-                  height: getProportionateScreenHeight(100),
-                  width: getProportionateScreenWidth(150),
-                ),
+                //todo icons need to be updated
+                // Image.asset(
+                //   Assets.pngAssetsSplash,
+                //   height: getProportionateScreenHeight(100),
+                //   width: getProportionateScreenWidth(150),
+                // ),
                 SizedBox(
                   height: getProportionateScreenHeight(30),
                 ),
                 Text(
                   "Verify Email",
-                  style: AppStyles.w600f24inter.copyWith(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w700,
-                    color: kBlackColor.withValues(alpha: 0.7)
-                  ),
+                  style: AppTypography.bigBodyText,
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(10),
@@ -75,10 +71,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                 Text(
                   "We’ve sent a verification link to your email.\nPlease check and verify",
                   textAlign: TextAlign.center,
-                  style: AppStyles.w400f16inter.copyWith(
-                    fontSize: 14,
-                    color: kGray61Color,
-                  ),
+                  style: AppTypography.bigBodyText,
                 ),
                 SizedBox(
                   height: getProportionateScreenHeight(320),
@@ -96,7 +89,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   onTap: () async {
                     try {
                       context.showLoading();
-                     //Handle email verification logic
+                      //Handle email verification logic
                       context.pop();
                       context.showToast("Email sent successfully");
                     } catch (e) {
@@ -112,7 +105,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   linkText: "Login",
                   onTap: () async {
                     try {
-                     // Handle sign out logic
+                      // Handle sign out logic
                       Navigator.pushReplacementNamed(context, RouteName.signIn);
                     } catch (e) {
                       context.showToast(e.toString(), isError: true);

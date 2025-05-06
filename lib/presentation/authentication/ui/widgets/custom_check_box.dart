@@ -17,15 +17,16 @@ class CustomCheckbox extends StatelessWidget {
       builder: (context, isChecked, _) {
         return Checkbox(
           value: isChecked,
-          fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+          fillColor:
+              WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
             if (states.contains(WidgetState.selected)) {
-              return kScaffoldBlackColor;
+              return kBlackColor;
             }
             return Colors.transparent;
           }),
-          checkColor: kAppGreenColor,
+          checkColor: kBlackColor,
           side: WidgetStateBorderSide.resolveWith((states) {
-            return const BorderSide(color: kAppGreenColor, width: 1);
+            return const BorderSide(color: kPrimaryColor, width: 1);
           }),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2),

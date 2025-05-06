@@ -43,7 +43,8 @@ class CustomTextField extends StatefulWidget {
     this.textHorizontalPadding = 18,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
-    this.focusNode, this.alphaColor = 0.8,
+    this.focusNode,
+    this.alphaColor = 0.8,
   });
 
   @override
@@ -79,11 +80,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       obscureText: widget.obscureText && hidePassword,
       controller: widget.controller,
       keyboardType: widget.keyboardType,
-      style: AppStyles.w400f12inter.copyWith(
-        fontSize: 16,
-        color: Colors.black.withValues(alpha: widget.alphaColor),
-      ),
-      cursorColor: kAppGreenColor,
+      style: AppTypography.bodyText,
+      cursorColor: kBlackColor,
       decoration: InputDecoration(
         counter: const SizedBox.shrink(),
         border: InputBorder.none,
@@ -98,27 +96,27 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       });
                       log('Hide Password: ${hidePassword && widget.obscureText}');
                     },
+                    //todo icons need to be updated
                     child: Padding(
-                        padding: EdgeInsets.only(right: getProportionateScreenWidth(24)),
+                        padding: EdgeInsets.only(
+                            right: getProportionateScreenWidth(24)),
                         child: hidePassword && widget.obscureText
-                            ? SvgPicture.asset(Assets.svgAssetsClosedEyeIcon)
-                            : SvgPicture.asset(Assets.svgAssetsOpenEyeIcon)),
+                            ? Image.asset(Assets.pngAppIcon)
+                            : Image.asset(Assets.pngAppIcon)),
                   )
                 : null),
-        contentPadding: EdgeInsets.symmetric(horizontal: widget.textHorizontalPadding!, vertical: 14),
+        contentPadding: EdgeInsets.symmetric(
+            horizontal: widget.textHorizontalPadding!, vertical: 14),
         prefixIconColor: widget.prefixIconColor,
-        errorStyle: AppStyles.w400f12inter.copyWith(color: kErrorColor),
+        errorStyle: AppTypography.bodyText,
         hintText: widget.hintText,
-        hintStyle: AppStyles.w400f16inter.copyWith(
-          color: kB4GreyColor,
-          fontSize: 16,
-        ),
+        hintStyle: AppTypography.bodyText,
         filled: true,
-        fillColor: kScaffoldColor,
+        fillColor: kBlackColor,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: widget.borderColor ?? kGrey2Color,
+            color: widget.borderColor ?? kBlackColor,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
@@ -130,7 +128,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: widget.borderColor ?? kGrey2Color),
+          borderSide: BorderSide(color: widget.borderColor ?? kBlackColor),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -138,7 +136,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide:  BorderSide.none,
+          borderSide: BorderSide.none,
         ),
       ),
     );
