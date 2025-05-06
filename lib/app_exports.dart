@@ -24,7 +24,6 @@ export 'package:shamz_ai/presentation/setting/ui/setting_screen.dart';
 export 'package:shamz_ai/presentation/profile/ui/profile_screen.dart';
 export 'package:shamz_ai/utils/components/custom_app_abr.dart';
 export 'package:shamz_ai/presentation/authentication/ui/widgets/custom_check_box.dart';
-export 'package:shamz_ai/presentation/bottom_navbar/custom_bottom_navbar.dart';
 export 'package:shamz_ai/presentation/home/ui/home_screen.dart';
 export 'package:shamz_ai/presentation/authentication/data/authentication_provider.dart';
 export 'package:shamz_ai/utils/components/custom_icon_button.dart';

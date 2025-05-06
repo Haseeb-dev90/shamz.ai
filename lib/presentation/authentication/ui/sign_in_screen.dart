@@ -45,7 +45,7 @@ class _SignInScreenState extends State<SignInScreen> {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
-              builder: (context) => const CustomBottomNavBar(index: 0),
+              builder: (context) => HomeScreen()
             ),
             (route) => false,
           );

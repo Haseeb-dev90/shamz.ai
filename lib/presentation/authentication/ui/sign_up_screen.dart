@@ -51,11 +51,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
-              builder: (context) => const CustomBottomNavBar(index: 0),
+                builder: (context) => HomeScreen()
             ),
-            (route) => false,
-          );
-        }
+                (route) => false,
+          );}
         if (state is LoginVerification) {
           Navigator.pushReplacementNamed(
             context,
