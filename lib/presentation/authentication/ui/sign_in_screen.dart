@@ -38,8 +38,6 @@ class _SignInScreenState extends State<SignInScreen> {
         }
         if (state is LoginInProgress) {
           context.showLoading();
-        } else {
-          context.pop();
         }
         if (state is LoginSuccess) {
           Navigator.pushAndRemoveUntil(

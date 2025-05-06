@@ -38,9 +38,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       listener: (context, state) {
         if (state is LoginInProgress) {
           context.showLoading();
-        } else {
-          context.pop();
         }
+
         if (state is LoginFailure) {
           context.showToast(
             state.error ?? "An error occurred",

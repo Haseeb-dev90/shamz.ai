@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     ResponsiveConfig().init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Shamz.AI',
+      title: 'Shamz AI',
       theme: AppTheme.lightTheme,
       navigatorKey: navigatorKey,
       onGenerateRoute: AppGenerateRoute.generateRoute,
