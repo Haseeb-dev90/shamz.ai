@@ -1,5 +1,4 @@
 import 'dart:ui';
-import '../utils/clippers/top_curve_clipper.dart';
 import '/app_exports.dart';
 
 class WelcomeScreen extends StatefulWidget {

@@ -66,8 +66,6 @@ class AppTypography {
         fontSize: buttonTextSize,
         fontWeight: regular,
       );
-  static TextStyle get overline =>
-      getTextStyle(fontSize: captionSize, fontWeight: light);
 
   static TextStyle getTextStyle(
       {required double fontSize,

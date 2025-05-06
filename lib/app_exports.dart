@@ -22,7 +22,7 @@ export 'package:shamz_ai/presentation/authentication/ui/verify_email_screen.dart
 export 'package:shamz_ai/presentation/authentication/ui/reset_password_screen.dart';
 export 'package:shamz_ai/presentation/setting/ui/setting_screen.dart';
 export 'package:shamz_ai/presentation/profile/ui/profile_screen.dart';
-export 'package:shamz_ai/utils/components/custom_app_abr.dart';
+export 'package:shamz_ai/utils/components/custom_app_bar.dart';
 export 'package:shamz_ai/presentation/authentication/ui/widgets/custom_check_box.dart';
 export 'package:shamz_ai/presentation/home/ui/home_screen.dart';
 export 'package:shamz_ai/presentation/authentication/data/authentication_provider.dart';
@@ -30,6 +30,8 @@ export 'package:shamz_ai/utils/components/custom_icon_button.dart';
 export 'package:shamz_ai/utils/extensions/alert_extension.dart';
 export 'package:shamz_ai/presentation/authentication/bloc/login_bloc.dart';
 export 'package:shamz_ai/presentation/authentication/data/model/user_model.dart';
+
+export '../utils/clippers/top_curve_clipper.dart';
 export 'dart:io';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:shamz_ai/presentation/authentication/data/auth_service.dart';
