@@ -45,36 +45,29 @@ class CustomBottomNavBarState extends State<CustomBottomNavBar> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             items: [
+              //todo icons need to be updated
               _buildBottomNavigationBarItem(
-                activeIcon: Assets.svgAssetsActiveHomeIcon,
-                inactiveIcon: Assets.svgAssetsHomeIcon,
+                activeIcon: Assets.pngAppIcon,
+                inactiveIcon: Assets.pngAppIcon,
                 label: 'Home',
                 index: 0,
               ),
               _buildBottomNavigationBarItem(
-                activeIcon: Assets.svgAssetsTrackActiveIcon,
-                inactiveIcon: Assets.svgAssetsTrackInactiveIcon,
+                activeIcon: Assets.pngAppIcon,
+                inactiveIcon: Assets.pngAppIcon,
                 label: 'Track',
                 index: 1,
               ),
               _buildBottomNavigationBarItem(
-                activeIcon: Assets.svgAssetsActiveSettingsIcon,
-                inactiveIcon: Assets.svgAssetsSettingsIcon,
+                activeIcon: Assets.pngAppIcon,
+                inactiveIcon: Assets.pngAppIcon,
                 label: 'Settings',
                 index: 2,
               ),
             ],
             currentIndex: _selectedIndex,
-            selectedLabelStyle: AppStyles.w400f11poppins.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 10,
-              color: kPrimaryColor,
-            ),
-            unselectedLabelStyle: AppStyles.w400f11poppins.copyWith(
-              fontWeight: FontWeight.w500,
-              fontSize: 10,
-              color: const Color(0XFF999999),
-            ),
+            selectedLabelStyle: AppTypography.bodyText,
+            unselectedLabelStyle: AppTypography.bodyText,
             selectedItemColor: kPrimaryColor,
             unselectedItemColor: const Color(0XFF999999),
             onTap: _onItemTapped,
@@ -91,8 +84,9 @@ class CustomBottomNavBarState extends State<CustomBottomNavBar> {
     required int index,
   }) {
     return BottomNavigationBarItem(
-      icon: SvgPicture.asset(
+      icon: Image.asset(
         _selectedIndex == index ? activeIcon : inactiveIcon,
+        height: 20,
       ),
       label: label,
     );
@@ -103,7 +97,7 @@ class CustomBottomNavBarState extends State<CustomBottomNavBar> {
       case 0:
         return const HomeScreen();
       case 1:
-        return  const ProfileScreen();
+        return const ProfileScreen();
       case 2:
         return const SettingScreen();
       default:

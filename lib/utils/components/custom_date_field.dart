@@ -14,14 +14,13 @@ class CustomDateFieldState extends State<CustomDateField> {
     DateTime? selectedDate = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate:DateTime.now(),
+      firstDate: DateTime.now(),
       lastDate: DateTime.now().add(const Duration(days: 5 * 365)),
     );
 
     if (selectedDate != null) {
       setState(() {
-        widget.controller.text =
-        "${selectedDate.month}/${selectedDate.year}";
+        widget.controller.text = "${selectedDate.month}/${selectedDate.year}";
       });
     }
   }
@@ -34,20 +33,14 @@ class CustomDateFieldState extends State<CustomDateField> {
         borderRadius: BorderRadius.circular(14),
       ),
       child: TextField(
-        style: AppStyles.w400f12inter.copyWith(
-          fontSize: 16,
-          color:  kScaffoldBlackColor,
-        ),
+        style: AppTypography.bodyText,
         controller: widget.controller,
         readOnly: true,
         decoration: InputDecoration(
           contentPadding:
-          const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+              const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
           hintText: "Expire Date",
-          hintStyle: AppStyles.w400f16inter.copyWith(
-            color: kB4GreyColor,
-            fontSize: 16,
-          ),
+          hintStyle: AppTypography.bodyText,
           border: InputBorder.none,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),

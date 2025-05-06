@@ -14,7 +14,7 @@ export 'package:shamz_ai/presentation/authentication/ui/sign_in_screen.dart';
 export 'package:shamz_ai/presentation/authentication/ui/sign_up_screen.dart';
 export 'package:shamz_ai/router/app_routes.dart';
 export 'package:shamz_ai/theme.dart';
-export 'package:shamz_ai/presentation/splash.dart';
+export 'package:shamz_ai/presentation/welcome_screen.dart';
 export 'package:shamz_ai/presentation/authentication/ui/widgets/forget_password_button.dart';
 export 'package:shamz_ai/presentation/authentication/ui/widgets/link_to_signup_or_login.dart';
 export 'package:shamz_ai/presentation/authentication/ui/forget_password_screen.dart';
@@ -40,5 +40,3 @@ export 'package:delightful_toast/toast/utils/enums.dart';
 export 'package:loading_animation_widget/loading_animation_widget.dart';
 export 'package:flutter/services.dart';
 export 'package:shamz_ai/presentation/home/data/home_provider.dart';
-
-

@@ -10,32 +10,20 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   LoginBloc({
     AuthenticationProvider? authenticationProvider,
-  }) : authenticationProvider = authenticationProvider ?? AuthenticationProvider(), super(LoginInitial()) {
+  })  : authenticationProvider =
+            authenticationProvider ?? AuthenticationProvider(),
+        super(LoginInitial()) {
     on<LoginButtonPressed>(_handleLogin);
     on<SignUpButtonPressed>(_handleSignUp);
     on<AuthStarted>(_handleAuthStarted);
     on<VerifyEmailButtonPressed>(_handleVerifyEmail);
-    on<LoginSuccessEvent>(_handleSuccess);
-  }
-
-  Future<void> _handleSuccess(
-      LoginSuccessEvent event, Emitter<LoginState> emit) async {
-    try {
-      emit(LoginInProgress());
-   // Handle login logic
-   //    emit(LoginSuccess(
-   //        user: UserModel.fromFirestore(
-   //            userDoc.data() as Map<String, dynamic>)));
-    } catch (error) {
-      emit(LoginFailure(error: error.toString()));
-    }
   }
 
   _handleVerifyEmail(
       VerifyEmailButtonPressed event, Emitter<LoginState> emit) async {
     try {
       emit(LoginInProgress());
-     // Handle verify email logic
+      // Handle verify email logic
     } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
@@ -45,7 +33,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       AuthStarted event, Emitter<LoginState> emit) async {
     emit(LoginInitial());
     try {
-    // Handle auth started logic
+      // Handle auth started logic
     } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
@@ -53,11 +41,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _handleLogin(
       LoginButtonPressed event, Emitter<LoginState> emit) async {
-
     try {
       emit(LoginInProgress());
-     // Handle login logic
-    }  catch (error) {
+      // Handle login logic
+    } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
   }
@@ -67,7 +54,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     try {
       emit(LoginInProgress());
       // Handle sign up logic
-    }  catch (error) {
+    } catch (error) {
       emit(LoginFailure(error: error.toString()));
     }
   }

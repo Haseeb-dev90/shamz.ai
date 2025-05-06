@@ -1,4 +1,5 @@
 import 'package:shamz_ai/app_exports.dart';
+
 class LinkToSignUpOrLogin extends StatelessWidget {
   final String text;
   final String linkText;
@@ -23,10 +24,7 @@ class LinkToSignUpOrLogin extends StatelessWidget {
       children: [
         Text(
           text,
-          style: AppStyles.w400f11poppins.copyWith(
-            fontSize: 14,
-            color: kGrey8EColor
-          ),
+          style: AppTypography.bodyText,
         ),
         TextButton(
           onPressed: onTap,
@@ -42,14 +40,7 @@ class LinkToSignUpOrLogin extends StatelessWidget {
               )),
           child: Text(
             linkText,
-            style: AppStyles.w400f11poppins.copyWith(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: kPrimaryColor,
-              decoration: TextDecoration.underline,
-              decorationColor: kPrimaryColor,
-              height: 1,
-            ),
+            style: AppTypography.bodyText,
           ),
         ),
       ],

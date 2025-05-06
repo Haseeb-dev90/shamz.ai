@@ -1,6 +1,5 @@
 import '/app_exports.dart';
 
-
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
@@ -66,21 +65,18 @@ class _SignInScreenState extends State<SignInScreen> {
                   SizedBox(
                     height: getProportionateScreenHeight(60),
                   ),
-                  Image.asset(
-                    Assets.pngAssetsSplash,
-                    height: getProportionateScreenHeight(100),
-                    width: getProportionateScreenWidth(150),
-                  ),
+                  //todo icons need to be updated
+                  // Image.asset(
+                  //   Assets.pngAssetsSplash,
+                  //   height: getProportionateScreenHeight(100),
+                  //   width: getProportionateScreenWidth(150),
+                  // ),
                   SizedBox(
                     height: getProportionateScreenHeight(20),
                   ),
                   Text(
                     "Sign In",
-                    style: AppStyles.w600f24inter.copyWith(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                      color: kBlackColor.withValues(alpha: 0.7),
-                    ),
+                    style: AppTypography.bigBodyText,
                   ),
                   SizedBox(
                     height: getProportionateScreenHeight(10),
@@ -88,10 +84,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   Text(
                     textAlign: TextAlign.center,
                     "Please enter the credentials to login to\nyour account",
-                    style: AppStyles.w400f16inter.copyWith(
-                      fontSize: 14,
-                      color: kGray61Color,
-                    ),
+                    style: AppTypography.bigBodyText,
                   ),
                   SizedBox(
                     height: getProportionateScreenHeight(24),

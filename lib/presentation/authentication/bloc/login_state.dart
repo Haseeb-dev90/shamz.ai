@@ -14,7 +14,6 @@ class LoginInProgress extends LoginState {}
 class LoginSuccess extends LoginState {
   final UserModel? user;
 
-
   const LoginSuccess({this.user});
 
   @override

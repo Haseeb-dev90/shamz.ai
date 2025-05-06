@@ -44,6 +44,7 @@ class AuthStarted extends LoginEvent {
 }
 
 class VerifyEmailButtonPressed extends LoginEvent {}
+
 class LoginSuccessEvent extends LoginEvent {}
 
 class AuthEnd extends LoginEvent {

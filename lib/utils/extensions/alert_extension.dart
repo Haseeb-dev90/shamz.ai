@@ -19,7 +19,7 @@ extension ExtensionOnContext on BuildContext {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             shape: BoxShape.rectangle,
-            color: kScaffoldColor.withAlpha(204),
+            color: kBlackColor.withAlpha(204),
             border: Border.all(
               color: snakeColor,
               width: 1,
@@ -53,29 +53,29 @@ extension ExtensionOnContext on BuildContext {
       barrierDismissible: false,
       barrierColor: Colors.transparent,
       builder: (context) {
-        return  Center(
-            child: LoadingAnimationWidget.staggeredDotsWave(
+        return Center(
+          child: LoadingAnimationWidget.staggeredDotsWave(
             color: color,
             size: 50,
-        ),
+          ),
         );
       },
     );
   }
 
   void showAppDialog(
-      BuildContext context, {
-        void Function()? onYes,
-        void Function()? onNo,
-        required final Widget child,
-        required String yesText,
-        required String noText,
-        required Widget icon,
-        Color yesButtonBgColor = kPrimaryColor,
-        Color yesButtonTextColor = kScaffoldBlackColor,
-        Color noButtonBgColor = kWhiteColor,
-        Color noButtonTextColor = kBlackColor,
-      }) {
+    BuildContext context, {
+    void Function()? onYes,
+    void Function()? onNo,
+    required final Widget child,
+    required String yesText,
+    required String noText,
+    required Widget icon,
+    Color yesButtonBgColor = kPrimaryColor,
+    Color yesButtonTextColor = kBlackColor,
+    Color noButtonBgColor = kWhiteColor,
+    Color noButtonTextColor = kBlackColor,
+  }) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -138,8 +138,6 @@ extension ExtensionOnContext on BuildContext {
     );
   }
 
-
-
   TextTheme get textTheme => Theme.of(this).textTheme;
 
   showBottomSheet(Widget content) {
@@ -154,7 +152,7 @@ extension ExtensionOnContext on BuildContext {
           topRight: Radius.circular(20),
         ),
       ),
-      backgroundColor: kAppGreenColor,
+      backgroundColor: kPrimaryColor,
       elevation: 10,
       builder: (BuildContext context) {
         return SingleChildScrollView(
