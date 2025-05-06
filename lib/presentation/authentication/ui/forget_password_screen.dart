@@ -90,7 +90,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
     if (_formKey.currentState!.validate()) {
       try {
         context.showLoading();
-        await AuthenticationProvider().sendPasswordResetEmail(_emailController.text.trim());
+       // Handle password reset email logic
         context.showToast("Password reset link has been sent to your email");
         context.pop();
       } catch (e) {

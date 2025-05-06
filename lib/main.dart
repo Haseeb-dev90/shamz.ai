@@ -1,17 +1,16 @@
 import '/app_exports.dart';
-import 'firebase_options.dart';
+import 'di/locator.dart';
+
 
 void main() async {
-  //make sure to intalize di
+
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  initServices();
   Bloc.observer = SimpleBlocObserver();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: kScaffoldBlackColor,
-      statusBarIconBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
     ),
   );
   runApp(
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
     ResponsiveConfig().init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Shamz AI',
+      title: 'Shamz.AI',
       theme: AppTheme.lightTheme,
       navigatorKey: navigatorKey,
       onGenerateRoute: AppGenerateRoute.generateRoute,

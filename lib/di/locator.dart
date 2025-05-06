@@ -8,12 +8,6 @@ void initServices() {
   ///
   /// Register provider
   ///
-
   locator.registerSingleton<AuthenticationProvider>(AuthenticationProvider());
 
-  ///
-  /// Example how to register if something is required
-  ///
-  // locator.registerSingleton<AuthenticationRepository>(
-  //     AuthenticationRepository(authenticationProvider: locator.get<AuthenticationProvider>(), tokenProvider: locator.get<TokenProvider>()));
 }

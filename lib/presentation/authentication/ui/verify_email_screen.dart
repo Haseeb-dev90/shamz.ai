@@ -1,6 +1,6 @@
 import 'dart:developer';
 import '/app_exports.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 
 class VerifyEmailScreen extends StatefulWidget {
   const VerifyEmailScreen({super.key});
@@ -96,11 +96,9 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   onTap: () async {
                     try {
                       context.showLoading();
-                      await AuthenticationProvider().verifyEmail();
+                     //Handle email verification logic
                       context.pop();
                       context.showToast("Email sent successfully");
-                    } on FirebaseAuthException catch (e) {
-                      context.showToast(e.message.toString(), isError: true);
                     } catch (e) {
                       context.showToast(e.toString(), isError: true);
                     }
@@ -114,7 +112,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
                   linkText: "Login",
                   onTap: () async {
                     try {
-                      await AuthenticationProvider().signOut();
+                     // Handle sign out logic
                       Navigator.pushReplacementNamed(context, RouteName.signIn);
                     } catch (e) {
                       context.showToast(e.toString(), isError: true);
