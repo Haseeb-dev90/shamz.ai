@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
         showBackIcon: false,
       ),
       body: Center(
-        child: Text("Track Screen"),
+        child: Text("Profile Screen"),
       ),
     );
   }

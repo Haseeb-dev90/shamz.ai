@@ -29,9 +29,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
         if (state is LoginSuccess) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(
-              builder: (context) => const CustomBottomNavBar(index: 0),
-            ),
+            MaterialPageRoute(builder: (context) => HomeScreen()),
             (route) => false,
           );
           context.showToast(AppStrings.loginSuccess);

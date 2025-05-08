@@ -1,5 +1,4 @@
 import 'dart:ui';
-import '../utils/clippers/top_curve_clipper.dart';
 import '/app_exports.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -82,7 +81,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     fontSize: 27,
                     fontWeight: FontWeight.w400,
                     color: kPrimaryColor,
-
                   ),
                 ),
                 TextSpan(
@@ -90,20 +88,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: AppTypography.h1.copyWith(
                     fontSize: 27,
                     fontWeight: FontWeight.w400,
-
                   ),
                 ),
               ],
             ),
-          )
-,
+          ),
           SizedBox(
             height: getProportionateScreenHeight(45),
           ),
           CustomActionButton(
               buttonText: 'Log in',
-              buttonTextStyle:
-                  AppTypography.buttonText.copyWith(color: kWhiteColor, fontSize: getProportionateScreenHeight(24)),
+              buttonTextStyle: AppTypography.buttonText.copyWith(
+                  color: kWhiteColor,
+                  fontSize: getProportionateScreenHeight(24)),
               height: getProportionateScreenHeight(75),
               backgroundColor: kBlackColor,
               borderRadius: 100,
@@ -115,8 +112,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
           CustomActionButton(
               buttonText: 'Create an account',
-              buttonTextStyle:
-              AppTypography.buttonText.copyWith(fontSize: getProportionateScreenHeight(24)),
+              buttonTextStyle: AppTypography.buttonText
+                  .copyWith(fontSize: getProportionateScreenHeight(24)),
               height: getProportionateScreenHeight(75),
               backgroundColor: kBlackColor.withValues(alpha: 0.2),
               borderRadius: 100,

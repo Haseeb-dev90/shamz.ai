@@ -38,15 +38,11 @@ class _SignInScreenState extends State<SignInScreen> {
         }
         if (state is LoginInProgress) {
           context.showLoading();
-        } else {
-          context.pop();
         }
         if (state is LoginSuccess) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(
-              builder: (context) => const CustomBottomNavBar(index: 0),
-            ),
+            MaterialPageRoute(builder: (context) => HomeScreen()),
             (route) => false,
           );
           context.showToast(AppStrings.loginSuccess);
@@ -75,16 +71,21 @@ class _SignInScreenState extends State<SignInScreen> {
                     height: getProportionateScreenHeight(20),
                   ),
                   Text(
-                    "Sign In",
-                    style: AppTypography.bigBodyText,
+                    "Log in",
+                    style: AppTypography.h1
+                        .copyWith(fontSize: getProportionateScreenHeight(62)),
                   ),
                   SizedBox(
                     height: getProportionateScreenHeight(10),
                   ),
                   Text(
                     textAlign: TextAlign.center,
-                    "Please enter the credentials to login to\nyour account",
-                    style: AppTypography.bigBodyText,
+                    maxLines: 2,
+                    "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi..",
+                    style: AppTypography.secondaryText.copyWith(
+                        fontSize: getProportionateScreenHeight(15),
+                        color: kBlackColor.withValues(alpha: 0.5),
+                        fontWeight: FontWeight.w400),
                   ),
                   SizedBox(
                     height: getProportionateScreenHeight(24),
@@ -115,6 +116,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   CustomActionButton(
                     buttonText: 'Log In',
+                    borderRadius: 18,
+                    height: getProportionateScreenHeight(69),
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
                         context.read<LoginBloc>().add(LoginButtonPressed(
@@ -133,9 +136,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     onTap: () {
                       Navigator.pushReplacementNamed(context, RouteName.signUp);
                     },
-                  ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(20),
                   ),
                 ],
               ),

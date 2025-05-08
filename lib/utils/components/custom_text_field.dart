@@ -85,26 +85,26 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         counter: const SizedBox.shrink(),
         border: InputBorder.none,
-        suffixIcon: widget.suffixIcon ??
-            (widget.obscureText
-                ? InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () {
-                      setState(() {
-                        hidePassword = !hidePassword;
-                      });
-                      log('Hide Password: ${hidePassword && widget.obscureText}');
-                    },
-                    //todo icons need to be updated
-                    child: Padding(
-                        padding: EdgeInsets.only(
-                            right: getProportionateScreenWidth(24)),
-                        child: hidePassword && widget.obscureText
-                            ? Image.asset(Assets.pngAppIcon)
-                            : Image.asset(Assets.pngAppIcon)),
-                  )
-                : null),
+        // suffixIcon: widget.suffixIcon ??
+        //     (widget.obscureText
+        //         ? InkWell(
+        //             splashColor: Colors.transparent,
+        //             highlightColor: Colors.transparent,
+        //             onTap: () {
+        //               setState(() {
+        //                 hidePassword = !hidePassword;
+        //               });
+        //               log('Hide Password: ${hidePassword && widget.obscureText}');
+        //             },
+        //             //todo icons need to be updated
+        //             child: Padding(
+        //                 padding: EdgeInsets.only(
+        //                     right: getProportionateScreenWidth(24)),
+        //                 child: hidePassword && widget.obscureText
+        //                     ? Image.asset(Assets.pngAppIcon)
+        //                     : Image.asset(Assets.pngAppIcon)),
+        //           )
+        //         : null),
         contentPadding: EdgeInsets.symmetric(
             horizontal: widget.textHorizontalPadding!, vertical: 14),
         prefixIconColor: widget.prefixIconColor,
@@ -112,7 +112,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         hintText: widget.hintText,
         hintStyle: AppTypography.bodyText,
         filled: true,
-        fillColor: kBlackColor,
+        fillColor: kWhiteColor,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(

@@ -38,9 +38,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       listener: (context, state) {
         if (state is LoginInProgress) {
           context.showLoading();
-        } else {
-          context.pop();
         }
+
         if (state is LoginFailure) {
           context.showToast(
             state.error ?? "An error occurred",
@@ -50,9 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         if (state is LoginSuccess) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(
-              builder: (context) => const CustomBottomNavBar(index: 0),
-            ),
+            MaterialPageRoute(builder: (context) => HomeScreen()),
             (route) => false,
           );
         }
